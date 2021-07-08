@@ -3,19 +3,18 @@
 /* appearance */
 static unsigned int borderpx  = 1;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
-static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static const unsigned int gappih    = 20;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
+static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
+static unsigned int gappih    = 20;       /* horiz inner gap between windows */
+static unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static unsigned int gappov    = 30;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 10;       /* vertical padding of bar */
-static const int sidepad            = 10;       /* horizontal padding of bar */
-static char font[]            = "monospace:size=10";
-static char dmenufont[]       = "monospace:size=10";
-static const char *fonts[]          = { font };
+static int vertpad            = 10;       /* vertical padding of bar */
+static int sidepad            = 10;       /* horizontal padding of bar */
+static char font[]                  = "monospace:size=10";
+static const  char *fonts[]         = { font };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -38,10 +37,10 @@ static const unsigned int alphas[][3]      = {
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
-static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
-static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
-static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
+static unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
+static unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
+static unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
+static int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -66,7 +65,7 @@ static int resizehints = 1;    /* 1 means respect size hints in tiled resizals *
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
-	{ "[M]",      monocle },	
+	{ "[M]",      monocle },
 	{ "[@]",      spiral },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
@@ -96,8 +95,6 @@ static const Layout layouts[] = {
 #define STATUSBAR "dwmblocks"
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /*
@@ -105,7 +102,6 @@ static const char *termcmd[]  = { "st", NULL };
  */
 ResourcePref resources[] = {
 		{ "font",               STRING,  &font },
-		{ "dmenufont",          STRING,  &dmenufont },
 		{ "normbgcolor",        STRING,  &normbgcolor },
 		{ "normbordercolor",    STRING,  &normbordercolor },
 		{ "normfgcolor",        STRING,  &normfgcolor },
@@ -119,11 +115,23 @@ ResourcePref resources[] = {
 		{ "nmaster",          	INTEGER, &nmaster },
 		{ "resizehints",       	INTEGER, &resizehints },
 		{ "mfact",      	 	FLOAT,   &mfact },
+        { "swallowfloating",    INTEGER, &swallowfloating },
+        { "gappih",             INTEGER, &gappih },
+        { "gappiv",             INTEGER, &gappiv },
+        { "gappoh",             INTEGER, &gappoh },
+        { "gappov",             INTEGER, &gappov },
+        { "smartgaps",          INTEGER, &smartgaps },
+        { "vertpad",            INTEGER, &vertpad },
+        { "sidepad",            INTEGER, &sidepad },
+        { "ulinepad",           INTEGER, &ulinepad },
+        { "ulinestroke",        INTEGER, &ulinestroke },
+        { "ulinevoffset",       INTEGER, &ulinevoffset },
+        { "ulineall",           INTEGER, &ulineall },
 };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          SHCMD("dmenu_run") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
