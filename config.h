@@ -62,8 +62,8 @@ static int ulineall 		     = 0;
 
 // rules
 static const Rule rules[] = {
-   // class instance title           tags mask isfloating isterminal noswallow monitor
-    { NULL, NULL,    "Event Tester", 0,        0,         0,         1,        -1 },
+   // class instance title tags mask isfloating isterminal noswallow monitor
+    { "St", NULL,    NULL, 0,        0,         1,         0,        -1 },
 };
 
 // sizes
@@ -94,7 +94,7 @@ static const Layout layouts[] = {
 };
 
 // modifier key
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 
 // tag keys
 #define TAGKEYS(KEY,TAG) \
@@ -145,63 +145,43 @@ ResourcePref resources[] = {
 
 // keys
 static Key keys[] = {
-	/* modifier                  key        function        argument */
-	{ MODKEY,                    XK_p,      spawn,          SHCMD("dmenu_run") },
-	{ MODKEY|ShiftMask,          XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY|Mod4Mask,           XK_u,      incrgaps,       {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_u,      incrgaps,       {.i = -1 } },
-	{ MODKEY|Mod4Mask,           XK_i,      incrigaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_i,      incrigaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,           XK_o,      incrogaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_o,      incrogaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,           XK_6,      incrihgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_6,      incrihgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,           XK_7,      incrivgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_7,      incrivgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,           XK_8,      incrohgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_8,      incrohgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,           XK_9,      incrovgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_9,      incrovgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,           XK_0,      togglegaps,     {0} },
-	{ MODKEY|Mod4Mask|ShiftMask, XK_0,      defaultgaps,    {0} },
-	{ MODKEY,                    XK_b,      togglebar,      {0} },
-	{ MODKEY,                    XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                    XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY,                    XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                    XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                    XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                    XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                    XK_Return, zoom,           {0} },
-	{ MODKEY,                    XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,          XK_c,      killclient,     {0} },
-	{ MODKEY,                    XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                    XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                    XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                    XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,          XK_space,  togglefloating, {0} },
-	{ MODKEY|ShiftMask,          XK_f,      togglefullscr,  {0} },
-	{ MODKEY,                    XK_s,      togglesticky,   {0} },
-	{ MODKEY,                    XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,          XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                    XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                    XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,          XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,          XK_period, tagmon,         {.i = +1 } },
-	  TAGKEYS(                   XK_1,                      0)
-	  TAGKEYS(                   XK_2,                      1)
-	  TAGKEYS(                   XK_3,                      2)
-	  TAGKEYS(                   XK_4,                      3)
-	  TAGKEYS(                   XK_5,                      4)
-	  TAGKEYS(                   XK_6,                      5)
-	  TAGKEYS(                   XK_7,                      6)
-	  TAGKEYS(                   XK_8,                      7)
-	  TAGKEYS(                   XK_9,                      8)
-	{ MODKEY|ShiftMask,          XK_q,      quit,           {0} },
+ // modifier          key        function          argument
+    TAGKEYS(          XK_1,                        0                                                        )
+    TAGKEYS(          XK_2,                        1                                                        )
+    TAGKEYS(          XK_3,                        2                                                        )
+    TAGKEYS(          XK_4,                        3                                                        )
+    TAGKEYS(          XK_5,                        4                                                        )
+    TAGKEYS(          XK_6,                        5                                                        )
+    TAGKEYS(          XK_7,                        6                                                        )
+    TAGKEYS(          XK_8,                        7                                                        )
+    TAGKEYS(          XK_9,                        8                                                        )
+    TAGKEYS(          XK_0,                        9                                                        )
+  { MODKEY,           XK_minus,  incrgaps,       { .i = -1 }                                                },
+  { MODKEY,           XK_plus,   incrgaps,       { .i = +1 }                                                },
+  { MODKEY,           XK_Tab,    view,           { 0 }                                                      },
+  { MODKEY,           XK_w,      spawn,            SHCMD("${BROWSER}")                                      },
+//{ MODKEY,           XK_r,      xrdb,           { .v = NULL }                                              },
+  { MODKEY|ShiftMask, XK_r,      quit,           { 0 }                                                      },
+  { MODKEY,           XK_t,      spawn,            SHCMD("${TERMINAL}")                                     },
+  { MODKEY,           XK_a,      view,           { .ui = ~0 }                                               },
+  { MODKEY,           XK_s,      togglesticky,   { 0 }                                                      },
+  { MODKEY,           XK_d,      spawn,            SHCMD("${MENU}")                                         },
+  { MODKEY,           XK_f,      spawn,            SHCMD("${TERMINAL} -c ${FILE_VIEWER} -e ${FILE_VIEWER}") },
+  { MODKEY|ShiftMask, XK_f,      togglefullscr,  { 0 }                                                      },
+  { MODKEY,           XK_k,      killclient,     { 0 }                                                      },
+  { MODKEY,           XK_z,      focusstack,     { .i = -1 }                                                },
+  { MODKEY,           XK_x,      focusstack,     { .i = +1 }                                                },
+  { MODKEY,           XK_b,      togglebar,      { 0 }                                                      },
+  { MODKEY,           XK_comma,  setmfact,       { .f = -0.05 }                                             },
+  { MODKEY,           XK_period, setmfact,       { .f = +0.05 }                                             },
+  { MODKEY,           XK_space,  zoom,           { 0 }                                                      },
+  { MODKEY,           XK_Down,   incnmaster,     { .i = -1 }                                                },
+  { MODKEY,           XK_Up,     incnmaster,     { .i = +1 }                                                },
 };
 
 // buttons
 static Button buttons[] = {
-	/* click         event mask button   function        argument */
+   // click          event mask button   function        argument
 	{ ClkLtSymbol,   0,         Button1, setlayout,      {0} },
 	{ ClkLtSymbol,   0,         Button3, setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,   0,         Button2, zoom,           {0} },
