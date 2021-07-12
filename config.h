@@ -157,7 +157,7 @@ static Key keys[] = {
     TAGKEYS(          XK_9,                        8                                                        )
     TAGKEYS(          XK_0,                        9                                                        )
   { MODKEY,           XK_minus,  incrgaps,       { .i = -1 }                                                },
-  { MODKEY,           XK_plus,   incrgaps,       { .i = +1 }                                                },
+  { MODKEY,           XK_equal,  incrgaps,       { .i = +1 }                                                },
   { MODKEY,           XK_Tab,    view,           { 0 }                                                      },
   { MODKEY,           XK_w,      spawn,            SHCMD("${BROWSER}")                                      },
 //{ MODKEY,           XK_r,      xrdb,           { .v = NULL }                                              },
