@@ -63,7 +63,8 @@ static int ulineall 		     = 0;
 // rules
 static const Rule rules[] = {
    // class instance title tags mask isfloating isterminal noswallow monitor
-    { "St", NULL,    NULL, 0,        0,         1,         0,        -1 },
+    { "fff", NULL,    NULL, 0,        0,         1,         0,        -1 },
+    { "st",  NULL,    NULL, 0,        0,         1,         0,        -1 },
 };
 
 // sizes
