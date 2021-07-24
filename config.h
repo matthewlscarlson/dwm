@@ -156,6 +156,7 @@ static Key keys[] = {
     TAGKEYS(          XK_8,                        7                                                        )
     TAGKEYS(          XK_9,                        8                                                        )
     TAGKEYS(          XK_0,                        9                                                        )
+  { 0,                XK_Print,  spawn,            SHCMD("shot.sh")                                         },
   { MODKEY,           XK_minus,  incrgaps,       { .i = -1 }                                                },
   { MODKEY,           XK_equal,  incrgaps,       { .i = +1 }                                                },
   { MODKEY,           XK_Tab,    view,           { 0 }                                                      },
@@ -169,6 +170,7 @@ static Key keys[] = {
   { MODKEY,           XK_f,      spawn,            SHCMD("${TERMINAL} -c ${FILE_VIEWER} -e ${FILE_VIEWER}") },
   { MODKEY|ShiftMask, XK_f,      togglefullscr,  { 0 }                                                      },
   { MODKEY,           XK_k,      killclient,     { 0 }                                                      },
+  { MODKEY,           XK_l,      spawn,            SHCMD("lock.sh")                                         },
   { MODKEY,           XK_z,      focusstack,     { .i = -1 }                                                },
   { MODKEY,           XK_x,      focusstack,     { .i = +1 }                                                },
   { MODKEY,           XK_b,      togglebar,      { 0 }                                                      },
