@@ -23,7 +23,7 @@ static int sidepad = 10;
 
 // fonts
 static char font[]         = "monospace:size=10";
-static const char *fonts[] = { font };
+static const char *fonts[] = { font, "Noto Color Emoji:style=Regular:size=16" };
 
 // colors
 static char normbgcolor[]     = "#222222";
@@ -116,32 +116,32 @@ static const char *termcmd[]  = { TERM, NULL };
 
 // xresources
 ResourcePref resources[] = {
-		{ "font",            STRING,  &font },
-		{ "normbgcolor",     STRING,  &normbgcolor },
+		{ "font",            STRING,  &font            },
+		{ "normbgcolor",     STRING,  &normbgcolor     },
 		{ "normbordercolor", STRING,  &normbordercolor },
-		{ "normfgcolor",     STRING,  &normfgcolor },
-		{ "selbgcolor",      STRING,  &selbgcolor },
-		{ "selbordercolor",  STRING,  &selbordercolor },
-		{ "selfgcolor",      STRING,  &selfgcolor },
-		{ "borderpx",        INTEGER, &borderpx },
-		{ "snap",          	 INTEGER, &snap },
-		{ "showbar",         INTEGER, &showbar },
-		{ "topbar",          INTEGER, &topbar },
-		{ "nmaster",         INTEGER, &nmaster },
-		{ "resizehints",     INTEGER, &resizehints },
-		{ "mfact",      	 FLOAT,   &mfact },
+		{ "normfgcolor",     STRING,  &normfgcolor     },
+		{ "selbgcolor",      STRING,  &selbgcolor      },
+		{ "selbordercolor",  STRING,  &selbordercolor  },
+		{ "selfgcolor",      STRING,  &selfgcolor      },
+		{ "borderpx",        INTEGER, &borderpx        },
+		{ "snap",          	 INTEGER, &snap            },
+		{ "showbar",         INTEGER, &showbar         },
+		{ "topbar",          INTEGER, &topbar          },
+		{ "nmaster",         INTEGER, &nmaster         },
+		{ "resizehints",     INTEGER, &resizehints     },
+		{ "mfact",      	 FLOAT,   &mfact           },
         { "swallowfloating", INTEGER, &swallowfloating },
-        { "gappih",          INTEGER, &gappih },
-        { "gappiv",          INTEGER, &gappiv },
-        { "gappoh",          INTEGER, &gappoh },
-        { "gappov",          INTEGER, &gappov },
-        { "smartgaps",       INTEGER, &smartgaps },
-        { "vertpad",         INTEGER, &vertpad },
-        { "sidepad",         INTEGER, &sidepad },
-        { "ulinepad",        INTEGER, &ulinepad },
-        { "ulinestroke",     INTEGER, &ulinestroke },
-        { "ulinevoffset",    INTEGER, &ulinevoffset },
-        { "ulineall",        INTEGER, &ulineall },
+        { "gappih",          INTEGER, &gappih          },
+        { "gappiv",          INTEGER, &gappiv          },
+        { "gappoh",          INTEGER, &gappoh          },
+        { "gappov",          INTEGER, &gappov          },
+        { "smartgaps",       INTEGER, &smartgaps       },
+        { "vertpad",         INTEGER, &vertpad         },
+        { "sidepad",         INTEGER, &sidepad         },
+        { "ulinepad",        INTEGER, &ulinepad        },
+        { "ulinestroke",     INTEGER, &ulinestroke     },
+        { "ulinevoffset",    INTEGER, &ulinevoffset    },
+        { "ulineall",        INTEGER, &ulineall        },
 };
 
 // keys
