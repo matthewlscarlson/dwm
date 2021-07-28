@@ -34,7 +34,7 @@ static char selbordercolor[]  = "#005577";
 static char selbgcolor[]      = "#005577";
 
 // alpha
-static const unsigned int baralpha    = 0xd0;
+static const unsigned int baralpha    = OPAQUE;
 static const unsigned int borderalpha = OPAQUE;
 
 // color array
