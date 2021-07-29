@@ -161,6 +161,7 @@ static Key keys[] = {
   { MODKEY,           XK_minus,  incrgaps,       { .i = -1 }                                                },
   { MODKEY,           XK_equal,  incrgaps,       { .i = +1 }                                                },
   { MODKEY,           XK_Tab,    view,           { 0 }                                                      },
+  { MODKEY,           XK_q,      spawn,            SHCMD("sys.sh")                                          },
   { MODKEY,           XK_w,      spawn,            SHCMD("${BROWSER}")                                      },
   { MODKEY,           XK_r,      reload,         { .v = NULL }                                              },
   { MODKEY|ShiftMask, XK_r,      quit,           { 1 }                                                      },
