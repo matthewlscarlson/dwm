@@ -147,6 +147,9 @@ ResourcePref resources[] = {
 // keys
 static Key keys[] = {
  // modifier          key        function          argument
+  { MODKEY,           XK_F1,     spawn,            SHCMD("vol.sh -t")                                       },
+  { MODKEY,           XK_F2,     spawn,            SHCMD("vol.sh - 1")                                      },
+  { MODKEY,           XK_F3,     spawn,            SHCMD("vol.sh + 1")                                      },
     TAGKEYS(          XK_1,                        0                                                        )
     TAGKEYS(          XK_2,                        1                                                        )
     TAGKEYS(          XK_3,                        2                                                        )
