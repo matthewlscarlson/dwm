@@ -158,8 +158,8 @@ static Key keys[] = {
   { MODKEY,           XK_F1,     spawn,            SHCMD("vol.sh -t")                                       },
   { MODKEY,           XK_F2,     spawn,            SHCMD("vol.sh - 1")                                      },
   { MODKEY,           XK_F3,     spawn,            SHCMD("vol.sh + 1")                                      },
-  { MODKEY,           XK_F5,     spawn,            SHCMD("monitor.sh - 25")                                 },
-  { MODKEY,           XK_F6,     spawn,            SHCMD("monitor.sh + 25")                                 },
+  { MODKEY,           XK_F5,     spawn,            SHCMD("light.sh - 1")                                    },
+  { MODKEY,           XK_F6,     spawn,            SHCMD("light.sh + 1")                                    },
     TAGKEYS(          XK_1,                        0                                                        )
     TAGKEYS(          XK_2,                        1                                                        )
     TAGKEYS(          XK_3,                        2                                                        )
