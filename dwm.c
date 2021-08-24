@@ -602,8 +602,7 @@ buttonpress(XEvent *e)
 					statussig = ch;
 				}
 			}
-		} else
-            click = NULL;
+		}
 	} else if ((c = wintoclient(ev->window))) {
 		focus(c);
 		restack(selmon);
