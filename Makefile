@@ -25,7 +25,7 @@ dwm: ${OBJ}
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f dwm dwmc ${DESTDIR}${PREFIX}/bin
-	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm
+	chmod 755 ${DESTDIR}${PREFIX}/bin/dwm ${DESTDIR}${PREFIX}/bin/dwmc
 	rm -f dwm *.o
 
 uninstall:

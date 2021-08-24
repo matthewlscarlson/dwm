@@ -51,9 +51,11 @@ static const unsigned int alphas[][3] = {
 	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
+// autostart
 static const char *const autostart[] = {
-	"st", NULL,
-	NULL /* terminate */
+    // start status bar
+	"sh", "-c", "${BAR}", NULL,
+	NULL
 };
 
 // tags
