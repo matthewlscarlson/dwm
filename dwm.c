@@ -603,7 +603,7 @@ buttonpress(XEvent *e)
 				}
 			}
 		} else
-			click = ClkStatusText;
+            click = NULL;
 	} else if ((c = wintoclient(ev->window))) {
 		focus(c);
 		restack(selmon);
