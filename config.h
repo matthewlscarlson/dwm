@@ -181,6 +181,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask, XK_r,      quit,           { 1 }                                                      },
   { MODKEY,           XK_t,      spawn,            SHCMD("${TERMINAL}")                                     },
   { MODKEY,           XK_p,      spawn,            SHCMD("music.sh -t")                                     },
+  { MODKEY|ShiftMask, XK_p,      spawn,            SHCMD("pass.sh")                                         },
   { MODKEY,           XK_a,      view,           { .ui = ~0 }                                               },
   { MODKEY,           XK_s,      togglesticky,   { 0 }                                                      },
   { MODKEY,           XK_d,      spawn,            SHCMD("${MENU}")                                         },
