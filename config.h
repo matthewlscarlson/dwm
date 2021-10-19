@@ -192,7 +192,7 @@ static Key keys[] = {
   { MODKEY,           XK_z,      focusstack,     { .i = -1 }                                                },
   { MODKEY,           XK_x,      focusstack,     { .i = +1 }                                                },
   { MODKEY,           XK_b,      togglebar,      { 0 }                                                      },
-  { MODKEY,           XK_n,      spawn,            SHCMD("rss.sh -o")                                       },
+//{ MODKEY,           XK_n,      spawn,            SHCMD("rss.sh -o")                                       },
   { MODKEY,           XK_m,      spawn,            SHCMD("music.sh -o")                                     },
   { MODKEY,           XK_comma,  setmfact,       { .f = -0.05 }                                             },
   { MODKEY,           XK_period, setmfact,       { .f = +0.05 }                                             },
