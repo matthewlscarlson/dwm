@@ -188,6 +188,7 @@ static Key keys[] = {
   { MODKEY,           XK_d,      spawn,            SHCMD("${MENU}")                                         },
   { MODKEY,           XK_f,      spawn,            SHCMD("${TERMINAL} -c ${FILE_VIEWER} -e ${FILE_VIEWER}") },
   { MODKEY|ShiftMask, XK_f,      togglefullscr,  { 0 }                                                      },
+  { MODKEY,           XK_h,      spawn,            SHCMD("hosts.sh")                                        },
   { MODKEY,           XK_k,      killclient,     { 0 }                                                      },
   { MODKEY,           XK_l,      spawn,            SHCMD("lock.sh")                                         },
   { MODKEY,           XK_z,      focusstack,     { .i = -1 }                                                },
