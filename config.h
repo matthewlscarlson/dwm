@@ -193,6 +193,7 @@ static Key keys[] = {
   { MODKEY,           XK_l,      spawn,            SHCMD("lock.sh")                                         },
   { MODKEY,           XK_z,      focusstack,     { .i = -1 }                                                },
   { MODKEY,           XK_x,      focusstack,     { .i = +1 }                                                },
+  { MODKEY,           XK_c,      spawn,            SHCMD("color.sh")                                        },
   { MODKEY,           XK_b,      togglebar,      { 0 }                                                      },
   { MODKEY,           XK_n,      spawn,            SHCMD("rss.sh -o")                                       },
   { MODKEY|ShiftMask, XK_n,      spawn,            SHCMD("net.sh -o")                                       },
