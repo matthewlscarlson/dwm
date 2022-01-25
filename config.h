@@ -69,10 +69,11 @@ static int ulineall 		     = 0;
 
 // rules
 static const Rule rules[] = {
-   // class  instance title tags mask isfloating isterminal noswallow monitor
-    { "fff", NULL,    NULL, 0,        0,         1,         0,        -1 },
-    { "st",  NULL,    NULL, 0,        0,         1,         0,        -1 },
-    { "vim", NULL,    NULL, 0,        0,         0,         1,        -1 },
+   // class                 instance title tags mask isfloating isterminal noswallow monitor
+    { "fff",                NULL,    NULL, 0,        0,         1,         0,        -1 },
+    { "st",                 NULL,    NULL, 0,        0,         1,         0,        -1 },
+    { "vim",                NULL,    NULL, 0,        0,         0,         1,        -1 },
+    { "Qemu-system-x86_64", NULL,    NULL, 0,        0,         0,         0,        -1 },
 };
 
 // sizes
