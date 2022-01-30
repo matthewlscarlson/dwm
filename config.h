@@ -69,10 +69,11 @@ static int ulineall 		     = 0;
 
 // rules
 static const Rule rules[] = {
-   // class  instance title tags mask isfloating isterminal noswallow monitor
-    { "fff", NULL,    NULL, 0,        0,         1,         0,        -1 },
-    { "st",  NULL,    NULL, 0,        0,         1,         0,        -1 },
-    { "vim", NULL,    NULL, 0,        0,         0,         1,        -1 },
+   // class                 instance title tags mask isfloating isterminal noswallow monitor
+    { "fff",                NULL,    NULL, 0,        0,         1,         0,        -1 },
+    { "st",                 NULL,    NULL, 0,        0,         1,         0,        -1 },
+    { "vim",                NULL,    NULL, 0,        0,         0,         1,        -1 },
+    { "Qemu-system-x86_64", NULL,    NULL, 0,        0,         0,         0,        -1 },
 };
 
 // sizes
@@ -180,6 +181,7 @@ static Key keys[] = {
   { MODKEY,           XK_r,      reload,         { .v = NULL }                                              },
   { MODKEY|ShiftMask, XK_r,      quit,           { 1 }                                                      },
   { MODKEY,           XK_t,      spawn,            SHCMD("${TERMINAL}")                                     },
+  { MODKEY,           XK_u,      spawn,            SHCMD("pkgs.sh -o")                                      },
   { MODKEY,           XK_p,      spawn,            SHCMD("music.sh -t")                                     },
   { MODKEY|ShiftMask, XK_p,      spawn,            SHCMD("pass.sh")                                         },
   { MODKEY,           XK_a,      view,           { .ui = ~0 }                                               },
@@ -187,12 +189,14 @@ static Key keys[] = {
   { MODKEY,           XK_d,      spawn,            SHCMD("${MENU}")                                         },
   { MODKEY,           XK_f,      spawn,            SHCMD("${TERMINAL} -c ${FILE_VIEWER} -e ${FILE_VIEWER}") },
   { MODKEY|ShiftMask, XK_f,      togglefullscr,  { 0 }                                                      },
+  { MODKEY,           XK_h,      spawn,            SHCMD("hosts.sh")                                        },
   { MODKEY,           XK_k,      killclient,     { 0 }                                                      },
   { MODKEY,           XK_l,      spawn,            SHCMD("lock.sh")                                         },
   { MODKEY,           XK_z,      focusstack,     { .i = -1 }                                                },
   { MODKEY,           XK_x,      focusstack,     { .i = +1 }                                                },
+  { MODKEY,           XK_c,      spawn,            SHCMD("color.sh")                                        },
   { MODKEY,           XK_b,      togglebar,      { 0 }                                                      },
-  { MODKEY,           XK_n,      spawn,            SHCMD("rss.sh -o")                                       },
+  { MODKEY,           XK_n,      spawn,            SHCMD("net.sh -o")                                       },
   { MODKEY,           XK_m,      spawn,            SHCMD("music.sh -o")                                     },
   { MODKEY,           XK_comma,  setmfact,       { .f = -0.05 }                                             },
   { MODKEY,           XK_period, setmfact,       { .f = +0.05 }                                             },
