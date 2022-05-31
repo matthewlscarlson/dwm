@@ -74,6 +74,7 @@ static const Rule rules[] = {
     { "st",                 NULL,    NULL, 0,        0,         1,         0,        -1 },
     { "vim",                NULL,    NULL, 0,        0,         0,         1,        -1 },
     { "Qemu-system-x86_64", NULL,    NULL, 0,        0,         0,         0,        -1 },
+    { "newsboat",           NULL,    NULL, 0,        0,         1,         0,        -1 },
 };
 
 // sizes
